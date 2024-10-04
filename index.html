@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultats Wizard</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Enlace al archivo CSS -->
+</head>
+<body>
+    <!-- Pantalla 1: Selección del número de jugadores e introducción de nombres -->
+    <div id="screen1" class="screen active">
+        <h1>Selecció del nombre de jugadors</h1>
+        <form id="playerCountForm">
+            <label for="playerCount">Selecciona el nombre de jugadors:</label>
+            <select id="playerCount">
+                <option value="1">1 jugador</option>
+                <option value="2">2 jugadors</option>
+                <option value="3">3 jugadors</option>
+                <option value="4">4 jugadors</option>
+                <option value="5">5 jugadors</option>
+                <option value="6">6 jugadors</option>
+                <option value="7">7 jugadors</option>
+                <option value="8">8 jugadors</option>
+            </select>
+            <button type="submit">Validar nombre de jugadors</button>
+        </form>
+        <div id="nameInputs"></div> <!-- Aquí aparecerán los campos de nombre -->
+    </div>
+
+    <!-- Pantalla 2: Introducció de puntuacions -->
+    <div id="screen2" class="screen" style="display: none;">
+        <h1>Introdueix les puntuacions de la ronda</h1>
+        <form id="scoreForm">
+            <div id="playerScores"></div>
+            <button type="submit">Afegir puntuació</button>
+        </form>
+        <button id="viewTotalScores">Veure puntuació total</button>
+        <button id="viewRoundInfo">Veure informació de la partida</button>
+    </div>
+
+    <!-- Pantalla 3: Veure la puntuació total -->
+    <div id="screen3" class="screen" style="display: none;">
+        <h1>Puntuació total</h1>
+        <table>
+            <thead>
+                <tr id="scoreTableHeaders"></tr>
+            </thead>
+            <tbody>
+                <tr id="scoreTableBody"></tr>
+            </tbody>
+        </table>
+        <button id="backToScores">Tornar a introduir puntuacions</button>
+    </div>
+
+    <!-- Pantalla 4: Informació de la partida actual -->
+    <div id="screen4" class="screen" style="display: none;">
+        <h1>Informació de la partida actual</h1>
+        <p>Nombre de partides jugades: <span id="roundCount">0</span></p>
+        <p>Cartes per repartir a cada jugador en la partida actual: <span id="cardsToDeal">1</span></p> <!-- Ajustado -->
+        <p>Jugador que reparteix les cartes en la partida actual: <span id="dealerName">Jugador 1</span></p> <!-- Ajustado -->
+        <button id="backToRounds">Tornar a les rondes</button>
+        <button id="resetGame">Reiniciar partida</button>
+    </div>
+
+    <script src="js/app.js"></script> <!-- Enlace al archivo JavaScript -->
+</body>
+</html>
